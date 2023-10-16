@@ -1,10 +1,9 @@
 #include "shell.h"
 
 /**
- * _getenv - searches the environment list to find
- * the environment variable "str".
- * @str: name of the enviroment variable to search. M.A.E.S.
- * Return: pointer to the corresponding value string or NULL othervise
+ * _getenv - check the environment list to find variable "str".
+ * @str: enviroment variable name used to search. M.A.E.S.
+ * Return: the environment variable, or NULL if it doesn't exist.
  **/
 
 char *_getenv(char *str)
@@ -52,30 +51,28 @@ char *_getenv(char *str)
 }
 
 /**
- * printenv - prints the environment variables list.
+ * printenv - prints(display) the environment variables list.
  **/
 
-void printenv(void)
+void hsh_printenv(void)
 {
-	int i = 0;
+	int j = 0;
 
-	while (environ[i] != NULL)
+	while (environ[j] != NULL)
 	{
-		write(STDOUT_FILENO, environ[i], _strlen(environ[i]));
+		write(STDOUT_FILENO, environ[j], _strlen(environ[j]));
 		write(STDOUT_FILENO, "\n", 1);
-		i++;
+		j++;
 	}
 }
 
 /**
- * _setenv - Initialize a new environment variable, or modify an existing one
+ * _setenv - set a new environment variable, or modify an existing
  * usage setenv VARIABLE VALUE.
- * @name: name of the enviroment variable to set.
- * @value: value of the variable.
- * @overwrite: when is 1 - if the variable already exist overwrite its value.
- * when is 0 don't. In both cases name was previously undefined,
- * it will be appended to the table. M.A.E.S.
- * Return: 0 if function succes -1 if it fail.
+ * @name: enviroment variable name to initialize.
+ * @value: variable value.
+ * @overwrite: 1 - if the variable already exist overwrite its value, 0 if don't.
+ * Return: 0 returned if function succes -1 if it failure.
  **/
 
 int _setenv(const char *name, const char *value, int overwrite)
@@ -114,11 +111,10 @@ int _setenv(const char *name, const char *value, int overwrite)
 }
 
 /**
- * overwrite_env - modify the value of an existent enviroment variable.
- * @name: name of the enviroment variable to set.
- * @value: value of the variable.
- * it will be appended to the table. M.A.E.S.
- * Return: 0 if function succes -1 if it fail.
+ * overwrite_env - an existent enviroment variable value is modifyed.
+ * @name: enviroment variable to initialize.
+ * @value: variable vaue.
+ * Return: 0 returned if function succes -1 if it failure.
  **/
 
 int overwrite_env(const char *name, const char *value)

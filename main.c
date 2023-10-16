@@ -1,6 +1,7 @@
 #include "shell.h"
 /**
- * main - simple shell entry point
+ * main - main entry point
+ *
  * Return: Always 0.
  **/
 

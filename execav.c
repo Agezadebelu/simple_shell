@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * execarg - checks if the inuput read is valid, when it is
- * the function forks, create a new child and execute.
- * @args: list of arguments obtained from the tokenized string input.
+ * execarg - Execute a command with arguments.
+ *
+ * @args: Arrays of arguments obtained from the tokenized string input.
  **/
 
-void execarg(char **args)
+void hsh_execarg(char **args)
 {
 	pid_t child_pid;
 	int status, succes = 0;
@@ -14,7 +14,7 @@ void execarg(char **args)
 
 	if (args[0][0] >= 'a' && args[0][0] <= 'z')
 	{
-		args[0] = iscommand(args);
+		args[0] = hsh_iscommand(args);
 		if (args[0] == NULL)
 		{
 			free(args[0]);

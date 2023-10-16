@@ -1,16 +1,16 @@
 #include "shell.h"
 /**
- * builtin - look for a builtin and call the respective function.
- * @args: list of arguments obtained from the tokenized string input.
- * Return: 1 if is a builtin 0 otherwise.
+ *hsh_builtin - check for a builtin and call the respective function.
+ * @args: array of arguments obtained from the tokenized string input.
+ * Return: 1 returned if builtin, 0 otherwise.
  **/
 
-int builtin(char **args)
+int hsh_builtin(char **args)
 {
 
 	if (_strcmp(args[0], "env") == 0)
 	{
-		printenv();
+		hsh_printenv();
 		free(args);
 		return (1);
 	}

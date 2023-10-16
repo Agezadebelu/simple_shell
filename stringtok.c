@@ -1,17 +1,16 @@
 #include "shell.h"
 
 /**
-  * stringtok - take a string and parse it
-  * into tokens wich are stored in an array.
-  * @str_line: string to be parsed.
-  * @delimitator: separator used to parse.
-  * Return: null terminated array with the tokenes.
+  * hsh_stringtok - spliting user input into arguments.
+  * @str_line: string to be tokens.
+  * @delimitator: separator used to token.
+  * Return: null or array pointers to the tokenes.
 **/
 
-char **stringtok(char *str_line, const char *delimitator)
+char **hsh_stringtok(char *str_line, const char *delimitator)
 {
 	char *token = NULL;
-	int wc = 0, i = 0;
+	int j = 0, i = 0;
 	char **args;
 
 	while (str_line[i] != '\0')
@@ -24,7 +23,7 @@ char **stringtok(char *str_line, const char *delimitator)
 			{
 				i++;
 			}
-			wc++;
+			j++;
 		}
 		if (str_line[i] == '\0')
 		{
@@ -32,7 +31,7 @@ char **stringtok(char *str_line, const char *delimitator)
 		}
 		i++;
 	}
-	args = malloc(sizeof(char *) * (wc + 1));
+	args = malloc(sizeof(char *) * (j + 1));
 	if (args == NULL)
 	{
 		return (NULL);

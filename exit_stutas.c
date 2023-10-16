@@ -1,21 +1,21 @@
 #include "shell.h"
 /**
- * exit_status - exit with status read as command.
- * @args: status in string format to be converted to an integer.
- * Return: -1 when status is an ilegal number 0 otherwise.
+ * exit_status - exit with status.
+ * @args: status in string to be changed to an integer.
+ * Return: -1 if status is not correct number 0 otherwise.
  */
 
 int exit_status(char **args)
 {
-	int exstat = 0, i = 0;
+	int exitstat = 0, k = 0;
 
 	if (args[1] != NULL)
 	{
-		exstat = _atoi(args[1]);
+		exitstat = _atoi(args[1]);
 
-		while (args[1][i] != '\0')
+		while (args[1][k] != '\0')
 		{
-			if (args[1][i] < '0' || args[1][i] > '9')
+			if (args[1][k] < '0' || args[1][k] > '9')
 			{
 				write(STDOUT_FILENO, args[0], _strlen(args[0]));
 				write(STDOUT_FILENO, ": Illegal number: ", 19);
@@ -24,15 +24,15 @@ int exit_status(char **args)
 				free(args);
 				return (2);
 			}
-		i++;
+		k++;
 		}
 		free(args);
-		return (exstat);
+		return (exitstat);
 	}
 	else
 	{
-		exstat = EXIT_SUCCESS;
+		exitstat = EXIT_SUCCESS;
 		free(args);
-		return (exstat);
+		return (exitstat);
 	}
 }

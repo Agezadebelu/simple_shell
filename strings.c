@@ -1,64 +1,64 @@
 #include "shell.h"
 
 /**
- * _strlen - returns the length of a string.
- * Return: returns the lenght of a string.
- * @s: pointer to a char
+ * _strlen - returns string length.
+ * Return: returns string length.
+ * @s: char type pointer.
  **/
 
 int _strlen(char *s)
 {
-	int len;
+	int i;
 
-	len = 0;
+	i = 0;
 
-	while (s[len])
+	while (s[i])
 	{
-		len++;
+		i++;
 	}
-	return (len);
+	return (i);
 }
 
 /**
- *_strcat - concatenates two strings.
- * @src: string 2
- * @dest: string 1
- * Return: concatenated string
+ *_strcat - joins two strings.
+ * @src: string 2 added to string 1.
+ * @dest: string 1 take string 2.
+ * Return: joined string.
  **/
 
 char *_strcat(char *dest, char *src)
 {
-	int i, a;
+	int a, i;
 
-	i = 0;
 	a = 0;
+	i = 0;
 
-	while (dest[i])
+	while (dest[a])
 	{
-		i++;
-	}
-	while (src[a])
-	{
-		dest[i] = src[a];
-		i++;
 		a++;
+	}
+	while (src[i])
+	{
+		dest[a] = src[i];
+		a++;
+		i++;
 	}
 	return (dest);
 }
 
 /**
- * _strcmp - compares two strings
- * @s1: first string
- * @s2: second string
- * Return: integer (-) s1<s2, 0 s1=s2 and (+) s1>s2
+ * _strcmp - to compares two strings.
+ * @s1: string 1.
+ * @s2: string 2.
+ * Return: integer (-) if s1<s2, 0 if s1=s2 and (+) if s1>s2.
  **/
 
 int _strcmp(char *s1, char *s2)
 {
-	int i, a;
+	int i, j;
 
 	i = 0;
-	a = 0;
+	j = 0;
 
 	if (s1[0] == s2[0])
 	{
@@ -67,23 +67,23 @@ int _strcmp(char *s1, char *s2)
 			i++;
 		}
 	}
-	a = (s1[i] - '0') -  (s2[i] - '0');
-	return (a);
+	j = (s1[i] - '0') -  (s2[i] - '0');
+	return (j);
 }
 
 /**
- * _atoi - convert a string to an integer.
- * @str: string
+ * _atoi - changes a string to an integer.
+ * @str: string to be changed.
  * Return: Always 0.
  */
 
 int _atoi(char *str)
 {
 	int i, sign;
-	double a;
+	double j;
 
 	i = 0;
-	a = 0;
+	j = 0;
 	sign = 1;
 
 	while (str[i])
@@ -94,13 +94,13 @@ int _atoi(char *str)
 		}
 		if (str[i] - '0' >= 0 && str[i] - '0' <= 9)
 		{
-			a = (a * 10) + str[i] - '0';
+			j = (j * 10) + str[i] - '0';
 		}
-		else if (a != 0)
+		else if (j != 0)
 		{
 			break;
 		}
 	i++;
 	}
-	return (a * sign);
+	return (j * sign);
 }
