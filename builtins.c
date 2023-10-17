@@ -27,7 +27,7 @@ int hsh_builtin(char **args)
 	}
 	if (_strcmp(args[0], "cd") == 0)
         {
-		hsh_cd(args[1]);
+		hsh_cd((const char *)args[1]);
                 free(args);
                 return (1);
 	}
