@@ -25,5 +25,11 @@ int hsh_builtin(char **args)
 		free(args);
 		return (1);
 	}
+	if (_strcmp(args[0], "cd") == 0)
+        {
+		hsh_cd(args[1]);
+                free(args);
+                return (1);
+	}
 	return (0);
 }
