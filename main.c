@@ -11,7 +11,6 @@ int main(int argc, char** args)
 	size_t size = 0;
 	char *str_line = NULL;
 	(void) argc;
-	char** args = NULL;
 
 	while (loop == 0)
 	{
