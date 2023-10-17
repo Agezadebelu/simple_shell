@@ -5,7 +5,7 @@
  * Return: Always 0.
  **/
 
-int main(int argc, char* args[])
+int main(int argc, char** args)
 {
 	int read = 0, loop = 0, exitstat = 0;
 	size_t size = 0;
