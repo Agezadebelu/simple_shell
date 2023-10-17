@@ -24,7 +24,7 @@ int _strlen(char *s);
 char *_strcat(char *dest, char *src);
 int _strcmp(char *s1, char *s2);
 char *_getenv(char *str);
-void hsh_cd(const char *directory);
+void hsh_cd(char *directory);
 int exit_status(char **args);
 int _setenv(const char *name, const char *value, int overwrite);
 int _unsetenv(const char *name);
