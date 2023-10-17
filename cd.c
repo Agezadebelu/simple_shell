@@ -1,5 +1,12 @@
 #include "shell.h"
 
+/**
+ * hsh_cd - changes the current working directory of the hsh.
+ * @args: array of arguments string.
+ *
+ * Return: On success, zero is returned.  On error, -1 is returned.
+ */
+
 void hsh_cd(char *directory) 
 {
 	char *old_directory;
