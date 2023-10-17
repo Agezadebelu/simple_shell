@@ -5,12 +5,14 @@
  * Return: Always 0.
  **/
 
-int main(void)
+int main(int argc, char* args[])
 {
 	int read = 0, loop = 0, exitstat = 0;
 	size_t size = 0;
 	char *str_line = NULL;
-	char **args = NULL;
+	(void) argc;
+
+	**args = NULL;
 
 	while (loop == 0)
 	{
