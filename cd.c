@@ -22,5 +22,7 @@ void hsh_cd(const char *directory)
 		if (_setenv("PWD", getcwd(NULL, 0), 1) != 0)
 			perror("setenv");
         }
-	free(old_directory);
+    }
+
+    free(old_directory);
 }
