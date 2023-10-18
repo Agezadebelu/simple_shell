@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * ctrlC - to execute the ctrl + c signal
+ * hsh_ctrlC - to execute the ctrl + c signal
  *
  * @sig_num: the signal sent if we touch Ctrl+C
  **/

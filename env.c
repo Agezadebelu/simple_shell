@@ -51,7 +51,7 @@ char *_getenv(char *str)
 }
 
 /**
- * printenv - prints(display) the environment variables list.
+ * hsh_printenv - prints(display) the environment variables list.
  **/
 
 void hsh_printenv(void)
@@ -71,7 +71,7 @@ void hsh_printenv(void)
  * usage setenv VARIABLE VALUE.
  * @name: enviroment variable name to initialize.
  * @value: variable value.
- * @overwrite: 1 - if the variable already exist overwrite its value, 0 if don't.
+ * @overwrite: 1 if variable already exist overwrite its value, 0 if don't.
  * Return: 0 returned if function succes -1 if it failure.
  **/
 
