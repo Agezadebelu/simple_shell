@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * execarg - Execute a command with arguments.
+ * hsh_execarg - Execute a command with arguments.
  *
  * @args: Arrays of arguments obtained from the tokenized string input.
  **/

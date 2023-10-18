@@ -1,11 +1,12 @@
 #include "shell.h"
 /**
  * main - main entry point
- *
+ * @argc: no of command or arrays.
+ * @args: arrays of arguements.
  * Return: Always 0.
  **/
 
-int main(int argc, char** args)
+int main(int argc, char **args)
 {
 	int read = 0, loop = 0, exitstat = 0;
 	size_t size = 0;
